@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import streamlit as st
 import math
+import scipy as sp
 
 #### Funciones y clases
 
@@ -165,6 +166,29 @@ def centro_masa (p1,p2,  intab) :
     cY = Regla_AreaY /  Regla_A
     return (cX, cY), Regla_A 
 
+
+
+
+
+def centro_masa_Scipy (p1,p2,  intab) :
+    def P1_minus_P2(x) : 
+        return p1.evaluate(x) - p2.evaluate(x)
+
+    def x_P1_minus_P2(x) : 
+        return x *(p1.evaluate(x) - p2.evaluate(x))
+
+    def P1_sq_minus_P2_sq(x) : 
+        return (1/2) *(p1.evaluate(x)**2 - p2.evaluate(x)**2)
+
+
+    Area = sp.integrate.quad(P1_minus_P2, intab[0], intab[1])
+    AreaX = sp.integrate.quad(x_P1_minus_P2, intab[0], intab[1])
+    AreaY = sp.integrate.quad(P1_sq_minus_P2_sq, intab[0], intab[1])
+
+    cX = AreaX /  Area
+    cY = AreaY /  Area
+    return (cX, cY), Area 
+
 valores = np.concat((P1x, P2x)) 
 valores_ab =  np.concat((P1ab, P2ab)) 
 
@@ -181,10 +205,18 @@ ax.fill_between(interval_ab, P1ab, P2ab, alpha = 0.7, label = 'Región', color =
 
 Centros = []
 Regiones = []
+
+Centros_Scipy = []
+Regiones_Scipy = []
+
 for intervalo in intervalos :
     C_i, region_i = centro_masa(P1, P2, intervalo)
+    C_SP_i, region_SP_i = centro_masa_Scipy(P1, P2, intervalo)
     if mostrar_centros : 
         plt.scatter(C_i[0], C_i[1], color = 'blue', label = f'c{intervalos.index(intervalo) + 1}')
+
+    Centros_Scipy.append(C_SP_i)
+    Regiones_Scipy.append(region_SP_i)  
     Centros.append(C_i)
     Regiones.append(abs(region_i))
 
