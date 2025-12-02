@@ -216,6 +216,7 @@ for intervalo in intervalos :
     C_SP_i, region_SP_i = centro_masa_Scipy(P1, P2, intervalo)
     if mostrar_centros : 
         plt.scatter(C_i[0], C_i[1], color = 'blue', label = f'c{intervalos.index(intervalo) + 1}')
+        plt.scatter(C_SP_i[0], C_SP_i[1], color = 'green', label = f'c{intervalos.index(intervalo) + 1}')
 
     Centros_Scipy.append(C_SP_i)
     Regiones_Scipy.append(region_SP_i)  
