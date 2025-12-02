@@ -222,13 +222,6 @@ for intervalo in intervalos :
     Centros.append(C_i)
     Regiones.append(abs(region_i))
 
-
-
-st.write(Centros_Scipy)
-st.write(Centros)
-
-
-
 Region_Total = sum(Regiones)
 Region_Total_SP = sum(Regiones_Scipy)
 
@@ -249,6 +242,19 @@ CY = Y / Region_Total
 
 CX_SP = X_SP / Region_Total_SP
 CY_SP = Y_SP / Region_Total_SP
+
+def relative_error(x_hat, x_real) :
+    if  abs(x_real) <= np.finfo(np.float32).eps : 
+        return x_hat - x_real
+    else : 
+        return (x_hat - x_real) / x_real
+
+Xre = relative_error(CX, CX_SP)
+Yre = relative_error(CY, CY_SP)
+
+st.write(Xre)
+st.write(Yre)
+
 
 
 ## Obtener las absiscas y pesos de integración Gaussiana
