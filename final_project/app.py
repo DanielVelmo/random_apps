@@ -227,22 +227,34 @@ for intervalo in intervalos :
 st.write(Centros_Scipy)
 st.write(Centros)
 
+
+
 Region_Total = sum(Regiones)
+Region_Total_SP = sum(Regiones_Scipy)
 
 X = 0
 Y = 0
+X_SP = 0
+Y_SP = 0
 for ci, Reg in zip(Centros, Regiones) : 
     X += ci[0] * Reg
     Y += ci[1] * Reg
 
+for ci, Reg in zip(Centros_Scipy, Regiones_Scipy) :     
+    X_SP = ci[0] * Reg
+    Y_SP = ci[1] * Reg
+
 CX = X / Region_Total
 CY = Y / Region_Total
 
+CX_SP = X_SP / Region_Total_SP
+CY_SP = Y_SP / Region_Total_SP
 
 
 ## Obtener las absiscas y pesos de integración Gaussiana
 
 plt.scatter(CX,CY, s = 200, label = 'centro de masa', color = 'red', marker = '*')
+plt.scatter(CX_SP,CY_SP, s = 200, label = 'centro de masa (SciPy)', color = 'green', marker = '*')
 
 ax.set_ylim(min(valores_ab) , max(valores_ab))
 
