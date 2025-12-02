@@ -224,8 +224,8 @@ for intervalo in intervalos :
 
 
 
-st.write(Regiones_Scipy)
-st.write(Regiones)
+st.write(Centros_Scipy)
+st.write(Centros)
 
 Region_Total = sum(Regiones)
 
