@@ -186,7 +186,7 @@ def centro_masa_Scipy (p1,p2,  intab) :
     AreaY = sp.integrate.quad(P1_sq_minus_P2_sq, intab[0], intab[1])
 
     cX = AreaX 
-    cY = AreaY /  Area
+    cY = AreaY 
     return (cX, cY), Area 
 
 valores = np.concat((P1x, P2x)) 
