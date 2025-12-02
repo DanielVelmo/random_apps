@@ -247,8 +247,8 @@ for ci, Reg in zip(Centros, Regiones) :
     Y += ci[1] * Reg
 
 for ci, Reg in zip(Centros_Scipy, Regiones_Scipy) :     
-    X_SP = ci[0] * Reg
-    Y_SP = ci[1] * Reg
+    X_SP += ci[0] * Reg
+    Y_SP += ci[1] * Reg
 
 CX = X / Region_Total
 CY = Y / Region_Total
