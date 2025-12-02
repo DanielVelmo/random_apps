@@ -187,7 +187,7 @@ def centro_masa_Scipy (p1,p2,  intab) :
 
     cX = AreaX 
     cY = AreaY 
-    return (cX, cY), Area  + 10
+    return (cX, cY), Area
 
 
 
