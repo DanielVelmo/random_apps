@@ -249,11 +249,7 @@ def relative_error(x_hat, x_real) :
     else : 
         return (x_hat - x_real) / x_real
 
-Xre = relative_error(CX, CX_SP)
-Yre = relative_error(CY, CY_SP)
 
-st.write(Xre)
-st.write(Yre)
 
 
 
@@ -270,3 +266,9 @@ ax.vlines(b, min(valores), max(valores), linestyles= '--', colors= 'black', alph
 ax.set_xlabel('X')
 ax.set_ylabel('Y')
 st.pyplot(fig, use_container_width= True)
+
+Xre = relative_error(CX, CX_SP)
+Yre = relative_error(CY, CY_SP)
+
+st.write(f'Error relativo coordenada X: {Xre}')
+st.write(f'Error relativo coordenada Y: {Yre}')
