@@ -233,6 +233,10 @@ Region_Total_SP = sum(Regiones_Scipy)
 st.write(Region_Total)
 st.write(Region_Total_SP)
 
+
+st.write(Centros)
+st.write(Centros_Scipy)
+
 X = 0
 Y = 0
 X_SP = 0
