@@ -223,19 +223,12 @@ for intervalo in intervalos :
     Centros.append(C_i)
     Regiones.append(abs(region_i))
 
-st.write(Regiones)
-st.write(Regiones_Scipy)
 
 
 Region_Total = sum(Regiones)
 Region_Total_SP = sum(Regiones_Scipy)
 
-st.write(Region_Total)
-st.write(Region_Total_SP)
 
-
-st.write(Centros)
-st.write(Centros_Scipy)
 
 X = 0
 Y = 0
@@ -256,12 +249,6 @@ CY = Y / Region_Total
 CX_SP = X_SP / Region_Total_SP
 CY_SP = Y_SP / Region_Total_SP
 
-st.write('Nuestras')
-st.write((X, Y))
-
-st.write('scipy')
-
-st.write((X_SP, Y_SP))
 
 def relative_error(x_hat, x_real) :
     if  abs(x_real) <= np.finfo(np.float32).eps : 
