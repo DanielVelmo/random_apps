@@ -237,6 +237,7 @@ X = 0
 Y = 0
 X_SP = 0
 Y_SP = 0
+
 for ci, Reg in zip(Centros, Regiones) : 
     X += ci[0] * Reg
     Y += ci[1] * Reg
@@ -250,6 +251,10 @@ CY = Y / Region_Total
 
 CX_SP = X_SP / Region_Total_SP
 CY_SP = Y_SP / Region_Total_SP
+
+
+st.write((X, Y))
+st.write((X_SP, Y_SP))
 
 def relative_error(x_hat, x_real) :
     if  abs(x_real) <= np.finfo(np.float32).eps : 
