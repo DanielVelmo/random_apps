@@ -219,7 +219,7 @@ for intervalo in intervalos :
         plt.scatter(C_SP_i[0], C_SP_i[1], color = 'green', label = f'c{intervalos.index(intervalo) + 1}')
 
     Centros_Scipy.append(C_SP_i)
-    Regiones_Scipy.append(region_SP_i)  
+    Regiones_Scipy.append(abs(region_SP_i))  
     Centros.append(C_i)
     Regiones.append(abs(region_i))
 
