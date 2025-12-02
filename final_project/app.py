@@ -252,8 +252,11 @@ CY = Y / Region_Total
 CX_SP = X_SP / Region_Total_SP
 CY_SP = Y_SP / Region_Total_SP
 
-
+st.write('Nuestras')
 st.write((X, Y))
+
+st.write('scipy')
+
 st.write((X_SP, Y_SP))
 
 def relative_error(x_hat, x_real) :
