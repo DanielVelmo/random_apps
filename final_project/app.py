@@ -189,6 +189,8 @@ def centro_masa_Scipy (p1,p2,  intab) :
     cY = AreaY 
     return (cX, cY), Area 
 
+
+
 valores = np.concat((P1x, P2x)) 
 valores_ab =  np.concat((P1ab, P2ab)) 
 
@@ -221,6 +223,8 @@ for intervalo in intervalos :
     Regiones.append(abs(region_i))
 
 
+
+st.write(Regiones_Scipy)
 Region_Total = sum(Regiones)
 
 X = 0
