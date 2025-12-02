@@ -223,8 +223,15 @@ for intervalo in intervalos :
     Centros.append(C_i)
     Regiones.append(abs(region_i))
 
+st.write(Regiones)
+st.write(Regiones_Scipy)
+
+
 Region_Total = sum(Regiones)
 Region_Total_SP = sum(Regiones_Scipy)
+
+st.write(Region_Total)
+st.write(Region_Total_SP)
 
 X = 0
 Y = 0
